@@ -1,0 +1,44 @@
+{
+  "name": "26b/laravel-static-site",
+  "description": "Laravel package to burn static sites",
+  "type": "library",
+  "require": {
+    "php": "^8.0",
+    "spatie/laravel-package-tools": "^1.13",
+    "illuminate/config": "^8.0 || ^9.0",
+    "illuminate/support": "^8.0 || ^9.0"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "TwentySixB\\LaravelStaticSite\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TwentySixB\\Tests\\LaravelStaticSite\\": "tests"
+    }
+  },
+  "authors": [
+    {
+      "name": "26B",
+      "email": "hello@26b.io"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "TwentySixB\\LaravelStaticSite\\StaticSiteServiceProvider"
+      ]
+    }
+  },
+  "require-dev": {
+    "orchestra/testbench": "^7.0",
+    "nunomaduro/collision": "^6.2"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "@php vendor/bin/testbench package:discover --ansi"
+    ]
+  }
+}
